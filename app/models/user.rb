@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :lists
+  dependent :destroy
   # validates :email, presence: true, uniqueness: true, allow_nil: false, allow_blank: false
 end
